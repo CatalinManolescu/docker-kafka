@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  zookeeper:
+    image: catalinm/kafka:2.12-1.0.0
+    network_mode: "host"
+    command:
+      - /opt/kafka/bin/zookeeper-server-start.sh
+      - /opt/kafka/custom-config/zookeeper.properties
+    volumes:
+      - ./config:/opt/kafka/custom-config
+  kafka:
+    network_mode: "host"
+    image: catalinm/kafka:2.12-1.0.0
+    command:
+      - /opt/kafka/bin/kafka-server-start.sh
+      - /opt/kafka/custom-config/server.properties
+    volumes:
+      - ./config:/opt/kafka/custom-config
