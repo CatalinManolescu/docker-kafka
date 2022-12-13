@@ -7,7 +7,7 @@ Resources:
 ## Build
 
 ```shell
-KAFKA_VERSION=1.0.0
+KAFKA_VERSION=2.7.2
 SCALA_VERSION=2.12
 docker buildx build --platform linux/amd64,linux/arm64 \
   --build-arg KAFKA_VERSION=${KAFKA_VERSION} \
