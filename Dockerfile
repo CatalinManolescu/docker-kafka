@@ -9,7 +9,7 @@ ARG KAFKA_BINARY_URI="https://archive.apache.org/dist/kafka/${KAFKA_VERSION}/${K
 ARG KAFKA_BINARY_ASC_URI="https://archive.apache.org/dist/kafka/${KAFKA_VERSION}/${KAFKA_BINARY_ASC_NAME}"
 
 RUN apt-get -qq update \
-    && apt-get install -qq -y wget gpg gettext openjdk-8-jre
+    && apt-get install -qq -y wget gpg gettext openjdk-11-jre
 
 # install kafka
 RUN wget -nv $KAFKA_BINARY_URI \
